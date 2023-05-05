@@ -1,7 +1,7 @@
 
 function getComputerChoice(){
     const symbols = ["Scissor","Rock","Paper"]
-    const random = Math.floor(Mar.random() * symbols.length);
+    const random = Math.floor(Math.random() * symbols.length);
     return symbols[random];
 }
 
@@ -24,10 +24,14 @@ function round(playerSelection, computerSelection){
     
     if (upPlayerSelection == upCompSelection) {
         return "It's a tie"
-    } else if (upPlayerSelection == "ROCK" && upCompSelection == "Scissor"){
-
+    } else if (upPlayerSelection == "Rock" && upCompSelection == "Scissor"){
+        return "Rock beats Scissor. You win!"
+    } else if (upPlayerSelection == "Scissor" && upCompSelection == "Paper"){
+        return "Scissor beats Paper. You win!"
+    } else if (upPlayerSelection == "Paper" && upCompSelection == "Rock"){
+        return "Paper beats Rock. You win!"
     } else{
-        return ""
+        return "You lose!"
     }
 }
 
@@ -38,7 +42,8 @@ while (keepPlaying){
     playerSelection = prompt("Enter your choice of Rock, Paper or Scissor: ");
 
     if (inputCheck(playerSelection)){
-        round(playerSelection, computerSelection);
+        console.log(round(playerSelection, computerSelection));
+        console.log("Somethjingz`");
     }
 
     if (playerSelection == "Quit"){
