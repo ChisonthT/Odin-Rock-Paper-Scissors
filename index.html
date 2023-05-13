@@ -6,8 +6,17 @@
     <title>Rock Paper Scissors</title>
 </head>
 
-<body> 
-   <p>Something</p> 
-   <script src="./javascript.js"></script>
+<body>
+    <div>
+        <h2>Points</h2>
+        <p id="player">Player's points: 0</p>
+        <p id="computer">Computer's points: 0</p>
+
+    </div>
+    <button type="button" data-key="rock" onclick="game('Rock')">Rock</button>
+    <button type="button" data-key='scissor' onclick="game('Scissor')">Scissor</button>
+    <button data-key="paper" onclick="game('Paper')">Paper</button>
+    <button onclick="window.close()">Quit</button>
+    <script src="./javascript.js"></script>
 </body>
 </html>
